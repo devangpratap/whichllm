@@ -81,6 +81,8 @@ GPU_BANDWIDTH: dict[str, float] = {
     "V100": 900.0,
     "P100": 732.0,
     # AMD
+    "AMD Radeon AI PRO R9700": 640,
+    "RX 9070 XT": 640.0,
     "RX 9060 XT": 320.0,
     "RX 7900 XTX": 960.0,
     "RX 7900 XT": 800.0,
