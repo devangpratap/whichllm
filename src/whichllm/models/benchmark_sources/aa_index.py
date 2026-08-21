@@ -57,7 +57,20 @@ AA_NAME_TO_HF_IDS: dict[str, list[str]] = {
     "gpt-oss-20b": ["openai/gpt-oss-20b"],
     "gpt-oss-120b": ["openai/gpt-oss-120b"],
     "Qwen3-Next 80B-A3B": ["Qwen/Qwen3-Next-80B-A3B-Instruct"],
+    "Qwen3.8 27B": ["Qwen/Qwen3.8-27B"],
+    "Qwen3.6 35B-A3B": ["Qwen/Qwen3.6-35B-A3B"],
+    "Qwen3.6 27B": ["Qwen/Qwen3.6-27B"],
     "Qwen3.5 397B-A17B": ["Qwen/Qwen3.5-397B-A17B"],
+    "Qwen3.5 122B-A10B": ["Qwen/Qwen3.5-122B-A10B"],
+    "Qwen3.5 35B-A3B": ["Qwen/Qwen3.5-35B-A3B"],
+    "Qwen3.5 27B": ["Qwen/Qwen3.5-27B"],
+    "Qwen3.5 9B": ["Qwen/Qwen3.5-9B"],
+    "Qwen3.5 4B": ["Qwen/Qwen3.5-4B"],
+    "Qwen3 Coder Next": ["Qwen/Qwen3-Coder-Next"],
+    "Qwen3 Coder 480B-A35B Instruct": ["Qwen/Qwen3-Coder-480B-A35B-Instruct"],
+    "Qwen3 Coder 30B A3B Instruct": ["Qwen/Qwen3-Coder-30B-A3B-Instruct"],
+    "Qwen2.5 Coder Instruct 32B": ["Qwen/Qwen2.5-Coder-32B-Instruct"],
+    "Qwen2.5 Coder Instruct 7B": ["Qwen/Qwen2.5-Coder-7B-Instruct"],
     "Qwen3 235B-A22B": ["Qwen/Qwen3-235B-A22B"],
     "Qwen3 32B": ["Qwen/Qwen3-32B"],
     "Qwen3 14B": ["Qwen/Qwen3-14B"],
@@ -146,11 +159,11 @@ AA_INDEX_FALLBACK_2026_06_29: dict[str, float] = {
     "zai-org/GLM-4.5": 19.5,  # live
     "zai-org/GLM-4.5-Air": 19.5,  # live
     # Qwen family
-    "Qwen/Qwen3.6-27B": 32.0,  # peer
+    "Qwen/Qwen3.6-27B": 37.7,  # live (2026-08-19; was a 32.0 hand estimate)
     "Qwen/Qwen3.5-397B-A17B": 33.7,  # live
     "Qwen/Qwen3-Next-80B-A3B-Instruct": 19.8,  # live
     "Qwen/Qwen3-235B-A22B": 13.4,  # live
-    "Qwen/Qwen3-Coder-30B-A3B-Instruct": 19.7,  # peer
+    "Qwen/Qwen3-Coder-30B-A3B-Instruct": 13.6,  # live (2026-08-19; was 19.7 peer)
     "Qwen/Qwen3-32B": 11.5,  # live
     "Qwen/Qwen3-14B": 10.1,  # live
     "Qwen/Qwen3-8B": 7.4,  # live
@@ -158,6 +171,21 @@ AA_INDEX_FALLBACK_2026_06_29: dict[str, float] = {
     "Qwen/Qwen3-4B": 1.3,  # peer
     "Qwen/Qwen3-1.7B": -7.9,  # peer
     "Qwen/Qwen3-0.6B": -14.0,  # peer
+    # Qwen3.5 / Qwen3.6 / Qwen3.8 releases and the current coder line. Raw
+    # values read from the same live AA index on 2026-08-19 (max-effort variant
+    # per model). Qwen3.8-27B is above the current _AA_INDEX_MAX and therefore
+    # clamps to 100 normalized; retuning the bounds belongs to #101.
+    "Qwen/Qwen3.8-27B": 52.0,  # live
+    "Qwen/Qwen3.6-35B-A3B": 32.1,  # live
+    "Qwen/Qwen3.5-27B": 34.6,  # live
+    "Qwen/Qwen3.5-122B-A10B": 32.8,  # live
+    "Qwen/Qwen3.5-35B-A3B": 29.9,  # live
+    "Qwen/Qwen3.5-9B": 21.8,  # live
+    "Qwen/Qwen3.5-4B": 20.4,  # live
+    "Qwen/Qwen3-Coder-Next": 21.3,  # live
+    "Qwen/Qwen3-Coder-480B-A35B-Instruct": 18.2,  # live
+    "Qwen/Qwen2.5-Coder-32B-Instruct": 6.9,  # live
+    "Qwen/Qwen2.5-Coder-7B-Instruct": 4.1,  # live
     # 8B-class peers (no AA tracking but realistic LB-equivalents)
     "meta-llama/Llama-3.1-8B-Instruct": -4.8,  # peer
     "meta-llama/Meta-Llama-3-8B-Instruct": -7.9,  # peer
